@@ -898,86 +898,41 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .ba-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.14); }
-    .ba-slider {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      user-select: none;
-      touch-action: none;
-      cursor: ew-resize;
+    .ba-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
       background: #1a1a2e;
     }
-    .ba-slider img {
-      position: absolute;
-      inset: 0;
+    .ba-side {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #1a1a2e;
+    }
+    .ba-side img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      pointer-events: none;
       display: block;
-      -webkit-user-drag: none;
+      transition: transform 0.4s ease;
     }
-    .ba-slider .ba-before {
-      clip-path: inset(0 50% 0 0);
-      will-change: clip-path;
-    }
-    .ba-handle {
-      position: absolute;
-      top: 0; bottom: 0;
-      left: 50%;
-      width: 3px;
-      background: var(--white);
-      box-shadow: 0 0 12px rgba(0,0,0,0.4);
-      transform: translateX(-50%);
-      pointer-events: none;
-      will-change: left;
-    }
-    .ba-handle::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 44px; height: 44px;
-      background: var(--white);
-      border-radius: 50%;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-    }
-    .ba-handle::after {
-      content: "\f337";
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: var(--primary);
-      font-size: 18px;
-      z-index: 2;
-    }
-    .ba-tag {
+    .ba-card:hover .ba-side img { transform: scale(1.03); }
+    .ba-label {
       position: absolute;
       top: 14px;
+      left: 14px;
       padding: 6px 14px;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.4px;
       text-transform: uppercase;
       border-radius: 20px;
-      pointer-events: none;
       backdrop-filter: blur(6px);
-    }
-    .ba-tag-before {
-      left: 14px;
-      background: rgba(26,26,46,0.78);
       color: white;
     }
-    .ba-tag-after {
-      right: 14px;
-      background: rgba(232,93,4,0.92);
-      color: white;
-    }
+    .ba-label.is-before { background: rgba(26,26,46,0.78); }
+    .ba-label.is-after { background: rgba(232,93,4,0.92); }
     .ba-card-body { padding: 22px 24px 26px; }
     .ba-card-body h3 {
       font-size: 18px;
@@ -1016,8 +971,8 @@
     }
     @media (max-width: 600px) {
       .showcase-row { grid-template-columns: repeat(2, 1fr); }
-      .ba-tag { font-size: 11px; padding: 4px 10px; }
-      .ba-handle::before { width: 38px; height: 38px; }
+      .ba-label { font-size: 11px; padding: 4px 10px; }
+      .ba-side { aspect-ratio: 4 / 4; }
     }
 
     /* ===== EXPERTISES (texte enrichi local SEO) ===== */
@@ -1272,17 +1227,20 @@
     <div class="fade-in" style="text-align:center;">
       <div class="section-tag">Transformations</div>
       <h2 class="section-title">Avant / <span>Après</span></h2>
-      <p class="section-subtitle" style="margin:0 auto;">Glissez le curseur sur chaque visuel pour découvrir la transformation réalisée par notre équipe.</p>
+      <p class="section-subtitle" style="margin:0 auto;">Découvrez nos chantiers en images : à gauche l'état initial, à droite le résultat livré par notre équipe.</p>
     </div>
 
     <div class="ba-grid fade-in">
       <div class="ba-card">
-        <div class="ba-slider">
-          <img class="ba-after" src="image/avant-apres/terrasse-apres.webp" alt="Garde-corps de terrasse rénové à Muret — peinture laquée blanche par SmatiProServices" loading="lazy" />
-          <img class="ba-before" src="image/avant-apres/terrasse-avant.webp" alt="Garde-corps de terrasse rouillé avant rénovation — chantier Muret" loading="lazy" />
-          <span class="ba-tag ba-tag-before">Avant</span>
-          <span class="ba-tag ba-tag-after">Après</span>
-          <div class="ba-handle" aria-hidden="true"></div>
+        <div class="ba-pair">
+          <div class="ba-side">
+            <img src="image/avant-apres/terrasse-avant.webp" alt="Garde-corps de terrasse rouillé avant rénovation — chantier Muret" loading="lazy" />
+            <span class="ba-label is-before">Avant</span>
+          </div>
+          <div class="ba-side">
+            <img src="image/avant-apres/terrasse-apres.webp" alt="Garde-corps de terrasse rénové à Muret — peinture laquée blanche par SmatiProServices" loading="lazy" />
+            <span class="ba-label is-after">Après</span>
+          </div>
         </div>
         <div class="ba-card-body">
           <h3>Garde-corps de terrasse</h3>
@@ -1291,12 +1249,15 @@
       </div>
 
       <div class="ba-card">
-        <div class="ba-slider">
-          <img class="ba-after" src="image/avant-apres/vitre-apres.webp" alt="Brise-vent vitré extérieur repeint après décapage — peintre Muret" loading="lazy" />
-          <img class="ba-before" src="image/avant-apres/vitre-avant.webp" alt="Brise-vent extérieur rouillé avant traitement — chantier Muret" loading="lazy" />
-          <span class="ba-tag ba-tag-before">Avant</span>
-          <span class="ba-tag ba-tag-after">Après</span>
-          <div class="ba-handle" aria-hidden="true"></div>
+        <div class="ba-pair">
+          <div class="ba-side">
+            <img src="image/avant-apres/vitre-avant.webp" alt="Brise-vent extérieur rouillé avant traitement — chantier Muret" loading="lazy" />
+            <span class="ba-label is-before">Avant</span>
+          </div>
+          <div class="ba-side">
+            <img src="image/avant-apres/vitre-apres.webp" alt="Brise-vent vitré extérieur repeint après décapage — peintre Muret" loading="lazy" />
+            <span class="ba-label is-after">Après</span>
+          </div>
         </div>
         <div class="ba-card-body">
           <h3>Brise-vent vitré extérieur</h3>
@@ -1305,12 +1266,15 @@
       </div>
 
       <div class="ba-card">
-        <div class="ba-slider">
-          <img class="ba-after" src="image/avant-apres/salon-arrondi-apres.webp" alt="Salon avec œil-de-bœuf rénové — peinture mate haut de gamme à Muret" loading="lazy" />
-          <img class="ba-before" src="image/avant-apres/salon-arrondi-avant.webp" alt="Salon en chantier — avant" loading="lazy" />
-          <span class="ba-tag ba-tag-before">Avant</span>
-          <span class="ba-tag ba-tag-after">Après</span>
-          <div class="ba-handle" aria-hidden="true"></div>
+        <div class="ba-pair">
+          <div class="ba-side">
+            <img src="image/avant-apres/salon-arrondi-avant.webp" alt="Salon en chantier avant rénovation à Muret" loading="lazy" />
+            <span class="ba-label is-before">Avant</span>
+          </div>
+          <div class="ba-side">
+            <img src="image/avant-apres/salon-arrondi-apres.webp" alt="Salon avec œil-de-bœuf rénové — peinture mate haut de gamme à Muret" loading="lazy" />
+            <span class="ba-label is-after">Après</span>
+          </div>
         </div>
         <div class="ba-card-body">
           <h3>Salon avec œil-de-bœuf</h3>
@@ -1319,12 +1283,15 @@
       </div>
 
       <div class="ba-card">
-        <div class="ba-slider">
-          <img class="ba-after" src="image/avant-apres/salon-poele-apres.webp" alt="Pièce rénovée avec poêle — après" loading="lazy" />
-          <img class="ba-before" src="image/avant-apres/salon-poele-avant.webp" alt="Pièce en chantier — avant" loading="lazy" />
-          <span class="ba-tag ba-tag-before">Avant</span>
-          <span class="ba-tag ba-tag-after">Après</span>
-          <div class="ba-handle" aria-hidden="true"></div>
+        <div class="ba-pair">
+          <div class="ba-side">
+            <img src="image/avant-apres/salon-poele-avant.webp" alt="Pièce en chantier avant installation poêle à Muret" loading="lazy" />
+            <span class="ba-label is-before">Avant</span>
+          </div>
+          <div class="ba-side">
+            <img src="image/avant-apres/salon-poele-apres.webp" alt="Pièce de vie rénovée avec poêle — peinture blanche unie par SmatiProServices" loading="lazy" />
+            <span class="ba-label is-after">Après</span>
+          </div>
         </div>
         <div class="ba-card-body">
           <h3>Pièce de vie avec poêle</h3>
@@ -1333,12 +1300,15 @@
       </div>
 
       <div class="ba-card" style="grid-column: 1 / -1; max-width: calc(50% - 14px); margin: 0 auto;">
-        <div class="ba-slider">
-          <img class="ba-after" src="image/avant-apres/cuisine-apres.webp" alt="Cuisine rénovée à Muret — reprise plafonds et préparation supports par SmatiProServices" loading="lazy" />
-          <img class="ba-before" src="image/avant-apres/cuisine-avant.webp" alt="Cuisine — avant rénovation" loading="lazy" />
-          <span class="ba-tag ba-tag-before">Avant</span>
-          <span class="ba-tag ba-tag-after">Après</span>
-          <div class="ba-handle" aria-hidden="true"></div>
+        <div class="ba-pair">
+          <div class="ba-side">
+            <img src="image/avant-apres/cuisine-avant.webp" alt="Cuisine avant rénovation à Muret" loading="lazy" />
+            <span class="ba-label is-before">Avant</span>
+          </div>
+          <div class="ba-side">
+            <img src="image/avant-apres/cuisine-apres.webp" alt="Cuisine rénovée à Muret — reprise plafonds et préparation supports par SmatiProServices" loading="lazy" />
+            <span class="ba-label is-after">Après</span>
+          </div>
         </div>
         <div class="ba-card-body">
           <h3>Rénovation de cuisine</h3>
@@ -1771,35 +1741,6 @@
       });
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Avant / Après — slider interactif
-    document.querySelectorAll('.ba-slider').forEach(slider => {
-      const before = slider.querySelector('.ba-before');
-      const handle = slider.querySelector('.ba-handle');
-      let active = false;
-
-      const update = (clientX) => {
-        const rect = slider.getBoundingClientRect();
-        let pct = ((clientX - rect.left) / rect.width) * 100;
-        pct = Math.max(0, Math.min(100, pct));
-        before.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
-        handle.style.left = `${pct}%`;
-      };
-
-      const start = (e) => { active = true; update(e.touches ? e.touches[0].clientX : e.clientX); };
-      const move = (e) => { if (!active) return; e.preventDefault(); update(e.touches ? e.touches[0].clientX : e.clientX); };
-      const end = () => { active = false; };
-
-      slider.addEventListener('mousedown', start);
-      slider.addEventListener('touchstart', start, { passive: true });
-      window.addEventListener('mousemove', move);
-      window.addEventListener('touchmove', move, { passive: false });
-      window.addEventListener('mouseup', end);
-      window.addEventListener('touchend', end);
-
-      // Hover-driven preview on desktop
-      slider.addEventListener('mousemove', (e) => { if (!active) update(e.clientX); });
-    });
 
     // Form submit
     function submitForm(e) {
