@@ -292,7 +292,7 @@
     .reviews-rating-info .stars{color:#f59e0b;font-size:17px;letter-spacing:2px}
     .reviews-rating-info strong{display:block;font-size:14px;color:var(--ink);margin-top:4px;font-weight:700}
     .reviews-rating-info span{font-size:13px;color:var(--muted)}
-    .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:920px;margin:0 auto}
     .review{background:white;border-radius:var(--radius);padding:30px 30px;box-shadow:var(--shadow-sm);transition:all 0.3s}
     .review:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
     .review-stars{color:#f59e0b;font-size:14px;margin-bottom:16px;letter-spacing:1.5px}
@@ -335,17 +335,19 @@
     .commune h4{font-size:14.5px;font-weight:700;color:var(--ink);letter-spacing:-0.01em}
     .commune p{font-size:13px;color:var(--muted);line-height:1.65}
 
-    /* ====== FAQ ====== */
-    .faq{background:white}
-    .faq-list{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
-    .faq-item{background:var(--cream);border-radius:var(--radius);border:1.5px solid transparent;overflow:hidden;transition:all 0.25s}
-    .faq-item[open]{background:white;border-color:var(--primary);box-shadow:var(--shadow-sm)}
-    .faq-q{padding:24px 30px;font-size:16px;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;letter-spacing:-0.01em}
+    /* ====== FAQ (compacte, sous contact) ====== */
+    .faq{background:var(--cream);padding:48px 0 64px}
+    .faq-mini-head{max-width:760px;margin:0 auto 20px;text-align:center}
+    .faq-mini-head .eyebrow{justify-content:center}
+    .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+    .faq-item{background:white;border-radius:12px;border:1px solid var(--line);overflow:hidden;transition:all 0.2s}
+    .faq-item[open]{border-color:var(--primary);box-shadow:var(--shadow-sm)}
+    .faq-q{padding:14px 20px;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;letter-spacing:-0.005em}
     .faq-q::-webkit-details-marker{display:none}
-    .faq-q::after{content:"+";font-size:26px;color:var(--primary);font-weight:400;line-height:1;transition:transform 0.25s;flex-shrink:0}
+    .faq-q::after{content:"+";font-size:20px;color:var(--primary);font-weight:400;line-height:1;flex-shrink:0}
     .faq-item[open] .faq-q::after{content:"−"}
-    .faq-a{padding:0 30px 26px;font-size:15px;color:var(--muted);line-height:1.75}
-    .faq-a strong{color:var(--ink)}
+    .faq-a{padding:0 20px 16px;font-size:13.5px;color:var(--muted);line-height:1.65}
+    .faq-a strong{color:var(--ink);font-weight:700}
 
     /* ====== CTA DARK ====== */
     .cta-dark{background:var(--ink);color:white;border-radius:var(--radius-lg);margin:0 24px;padding:80px 60px;text-align:center;position:relative;overflow:hidden}
@@ -524,10 +526,11 @@
       .zone-pill{font-size:12.5px;padding:8px 14px}
       .zone-map{aspect-ratio:4/3}
 
-      /* FAQ */
-      .faq-q{padding:18px 22px;font-size:14.5px;gap:12px}
-      .faq-q::after{font-size:22px}
-      .faq-a{padding:0 22px 22px;font-size:14px}
+      /* FAQ compact */
+      .faq{padding:36px 0 48px}
+      .faq-q{padding:12px 16px;font-size:13px;gap:10px}
+      .faq-q::after{font-size:18px}
+      .faq-a{padding:0 16px 14px;font-size:12.5px}
 
       /* CTA dark */
       .cta-dark{margin:0 18px;padding:50px 26px;border-radius:22px}
@@ -914,17 +917,6 @@
             </div>
           </div>
         </div>
-        <div class="review fade-in">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"J'ai fait appel à cette entreprise pour repeindre le mur de mon salon. Travail de qualité, efficacité et professionnalisme. Je recommande vivement Smati Pro Services."</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">T</div>
-            <div>
-              <div class="reviewer-name">Thomas Duquesne</div>
-              <div class="reviewer-meta">Il y a 2 mois · Peinture salon</div>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="reviews-cta fade-in">
         <a href="https://maps.app.goo.gl/JkWtS5zUeUtAmGP89" target="_blank" rel="noopener" class="btn btn-dark">
@@ -959,47 +951,6 @@
         <div class="zone-map fade-in">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.123!2d1.2817432!3d43.4412344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x29ebf0025b81c5b5%3A0xf1fc226f0d4f7e99!2sSmatiProServices!5e0!3m2!1sfr!2sfr!4v1" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte SmatiProServices Muret"></iframe>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="section-head fade-in">
-        <div class="eyebrow">Questions fréquentes</div>
-        <h2>Tout ce que vous voulez <em>savoir</em>.</h2>
-        <p>Les réponses aux questions que nous posent le plus souvent nos clients à Muret, Toulouse et alentours.</p>
-      </div>
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary class="faq-q">Combien coûte une peinture intérieure à Muret ?</summary>
-          <div class="faq-a">Le tarif moyen pour une peinture intérieure varie entre <strong>25 et 45 €/m²</strong> selon l'état des supports, le type de peinture choisi (mate, satinée, velours) et la complexité du chantier. Nous établissons un devis gratuit et détaillé sous 24h après visite sur place.</div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-q">Intervenez-vous pour les sinistres pris en charge par l'assurance ?</summary>
-          <div class="faq-a">Oui, nous sommes spécialistes de la <strong>rénovation après dégât des eaux, incendie ou inondation</strong>. Nous coordonnons directement avec votre assureur, fournissons tous les documents nécessaires (devis, factures, photos avant/après) et facilitons votre prise en charge.</div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-q">Quelle est votre zone d'intervention ?</summary>
-          <div class="faq-a">Basés à Muret (31600), nous intervenons à <strong>Toulouse, Portet-sur-Garonne, Cugnaux, Villeneuve-Tolosane, Seysses, Auterive</strong> et toutes les communes alentours dans un rayon d'environ 30 km.</div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-q">Sous quel délai pouvez-vous intervenir ?</summary>
-          <div class="faq-a">Nous répondons à toute demande de devis <strong>sous 24h</strong>. Selon la nature et la taille du chantier, nous intervenons généralement sous 1 à 3 semaines. Pour les sinistres urgents, intervention possible sous 48h.</div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-q">Le devis est-il vraiment gratuit ?</summary>
-          <div class="faq-a">Oui, tous nos devis sont <strong>100% gratuits et sans engagement</strong>. Nous nous déplaçons sur place pour évaluer précisément vos travaux, et vous remettons un devis détaillé sous 24h.</div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-q">Travaillez-vous le samedi ?</summary>
-          <div class="faq-a">Oui, notre équipe est disponible <strong>du lundi au samedi de 7h à 19h30</strong> pour réaliser vos chantiers.</div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-q">Êtes-vous assuré ?</summary>
-          <div class="faq-a">Oui, SmatiProServices dispose d'une <strong>assurance responsabilité civile professionnelle</strong> et d'une <strong>garantie décennale</strong> couvrant l'ensemble de nos interventions. Justificatifs disponibles sur simple demande.</div>
-        </details>
       </div>
     </div>
   </section>
@@ -1099,6 +1050,45 @@
             </button>
           </form>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ (compacte, après contact) ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-mini-head fade-in">
+        <span class="eyebrow">Questions fréquentes</span>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-q">Combien coûte une peinture intérieure à Muret ?</summary>
+          <div class="faq-a">Entre <strong>25 et 45 €/m²</strong> selon l'état des supports, le type de peinture (mate, satinée, velours) et la complexité du chantier. Devis gratuit détaillé sous 24h.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Intervenez-vous pour les sinistres pris en charge par l'assurance ?</summary>
+          <div class="faq-a">Oui, spécialistes de la <strong>rénovation après dégât des eaux, incendie ou inondation</strong>. Coordination directe avec votre assureur et fourniture des documents nécessaires.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Quelle est votre zone d'intervention ?</summary>
+          <div class="faq-a">Basés à Muret (31600), nous intervenons à <strong>Toulouse, Portet-sur-Garonne, Cugnaux, Villeneuve-Tolosane, Seysses, Auterive</strong> et alentours, rayon 30 km.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Sous quel délai pouvez-vous intervenir ?</summary>
+          <div class="faq-a">Réponse devis <strong>sous 24h</strong>. Intervention sous 1 à 3 semaines selon le chantier. Sinistres urgents : 48h.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Le devis est-il vraiment gratuit ?</summary>
+          <div class="faq-a">Oui, <strong>100% gratuit et sans engagement</strong>. Déplacement sur place pour évaluer précisément les travaux.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Travaillez-vous le samedi ?</summary>
+          <div class="faq-a">Oui, équipe disponible <strong>du lundi au samedi de 7h à 19h30</strong>.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Êtes-vous assuré ?</summary>
+          <div class="faq-a">Oui, <strong>responsabilité civile professionnelle</strong> + <strong>garantie décennale</strong> couvrent toutes nos interventions.</div>
+        </details>
       </div>
     </div>
   </section>
