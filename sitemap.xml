@@ -1,1 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://smatiproservices.fr/</loc><lastmod>2026-04-09</lastmod><priority>1.0</priority></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
+  <url>
+    <loc>https://smatiproservices.fr/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://smatiproservices.fr/image/hero-painter.webp</image:loc>
+      <image:title>Peintre en bâtiment à Muret — SmatiProServices</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://smatiproservices.fr/image/avant-apres/salon-arrondi-apres.webp</image:loc>
+      <image:title>Salon rénové à Muret par SmatiProServices</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://smatiproservices.fr/image/avant-apres/terrasse-apres.webp</image:loc>
+      <image:title>Terrasse rénovée à Muret — peinture extérieure</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://smatiproservices.fr/image/avant-apres/cuisine-apres.webp</image:loc>
+      <image:title>Rénovation de cuisine à Muret</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://smatiproservices.fr/mentions-legales.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
