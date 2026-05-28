@@ -216,27 +216,27 @@
     .section-head.left p{margin-left:0}
 
     /* ====== ABOUT ====== */
-    .about{background:var(--cream)}
-    .about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:center}
+    .about{background:var(--cream);padding:80px 0}
+    .about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
     .about-visual{position:relative}
-    .about-img{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5;background:var(--cream-2)}
+    .about-img{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/4.3;background:var(--cream-2)}
     .about-img img{width:100%;height:100%;object-fit:cover}
-    .about-stats{position:absolute;bottom:-30px;right:-30px;background:white;border-radius:var(--radius);padding:24px 28px;box-shadow:var(--shadow-lg);display:flex;gap:28px;align-items:center}
-    .about-stat .num{font-size:32px;font-weight:900;color:var(--primary);line-height:1;letter-spacing:-0.02em}
-    .about-stat .lbl{font-size:12px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.8px;font-weight:600}
-    .about-stat-divider{width:1px;height:46px;background:var(--line)}
+    .about-stats{position:absolute;bottom:-24px;right:-24px;background:white;border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow-lg);display:flex;gap:24px;align-items:center}
+    .about-stat .num{font-size:28px;font-weight:900;color:var(--primary);line-height:1;letter-spacing:-0.02em}
+    .about-stat .lbl{font-size:11.5px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.8px;font-weight:600}
+    .about-stat-divider{width:1px;height:40px;background:var(--line)}
     .about-seal{position:absolute;top:-32px;right:-32px;width:110px;height:110px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);transform:rotate(-12deg);z-index:2;padding:16px;transition:transform 0.4s ease}
     .about-seal:hover{transform:rotate(0deg) scale(1.05)}
     .about-seal img{width:100%;height:100%;object-fit:contain}
     @media (max-width:720px){.about-seal{width:88px;height:88px;top:-22px;right:14px;padding:14px}}
-    .about-content h2{font-size:clamp(32px,4vw,52px);line-height:1.05;margin-bottom:24px;letter-spacing:-0.025em}
+    .about-content h2{font-size:clamp(28px,3.5vw,42px);line-height:1.08;margin-bottom:18px;letter-spacing:-0.025em}
     .about-content h2 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--primary)}
-    .about-content p{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:18px}
-    .about-features{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:32px 0 36px}
-    .about-feature{display:flex;align-items:flex-start;gap:12px;padding:14px 0}
-    .about-feature i{width:36px;height:36px;border-radius:10px;background:var(--primary-soft);color:var(--primary);display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
-    .about-feature strong{display:block;font-size:14.5px;color:var(--ink);font-weight:700;margin-bottom:2px}
-    .about-feature span{font-size:13.5px;color:var(--muted)}
+    .about-content p{font-size:15.5px;color:var(--muted);line-height:1.65;margin-bottom:14px}
+    .about-features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0 28px}
+    .about-feature{display:flex;align-items:center;gap:10px;padding:6px 0}
+    .about-feature i{width:32px;height:32px;border-radius:9px;background:var(--primary-soft);color:var(--primary);display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+    .about-feature strong{display:block;font-size:13.5px;color:var(--ink);font-weight:700;margin-bottom:1px}
+    .about-feature span{font-size:12.5px;color:var(--muted)}
 
     /* ====== SERVICES ====== */
     .services{background:var(--dark);color:white}
@@ -274,15 +274,14 @@
     .work-showcase-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
     .work-showcase-item:hover img{transform:scale(1.06)}
 
-    /* ====== PROCESS ====== */
-    .process{background:var(--cream-2)}
-    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
-    .process-step{background:white;border-radius:var(--radius);padding:36px 28px;position:relative;transition:transform 0.3s}
-    .process-step:hover{transform:translateY(-4px)}
-    .step-num{font-family:var(--serif);font-style:italic;font-weight:400;font-size:64px;color:var(--primary);line-height:1;margin-bottom:16px;letter-spacing:-0.04em}
-    .process-step h3{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-0.01em}
-    .process-step p{font-size:14px;color:var(--muted);line-height:1.65}
-    .process-arrow{position:absolute;top:50px;right:-14px;color:var(--primary);font-size:16px;z-index:1}
+    /* ====== PROCESS (compact) ====== */
+    .process{background:var(--cream-2);padding:72px 0}
+    .process-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1000px;margin:0 auto;background:white;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-sm)}
+    .process-cell{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:12px;transition:background 0.2s}
+    .process-cell:hover{background:var(--cream)}
+    .step-num{font-family:var(--serif);font-style:italic;font-weight:400;font-size:38px;color:var(--primary);line-height:1;letter-spacing:-0.03em;flex-shrink:0}
+    .process-cell-text strong{display:block;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:2px;letter-spacing:-0.01em}
+    .process-cell-text span{font-size:12.5px;color:var(--muted);line-height:1.5}
 
     /* ====== REVIEWS ====== */
     .reviews{background:var(--cream)}
@@ -423,8 +422,7 @@
       .about-grid{grid-template-columns:1fr;gap:80px}
       .about-stats{right:auto;left:24px;bottom:-32px}
       .services-grid{grid-template-columns:repeat(2,1fr)}
-      .process-grid{grid-template-columns:repeat(2,1fr)}
-      .process-arrow{display:none}
+      .process-row{grid-template-columns:repeat(2,1fr)}
       .reviews-grid{grid-template-columns:repeat(2,1fr)}
       .zone-grid{grid-template-columns:1fr;gap:48px}
       .contact-card{grid-template-columns:1fr}
@@ -501,12 +499,13 @@
       .work-body p{font-size:13.5px}
       .work-showcase{grid-template-columns:repeat(2,1fr);gap:10px;margin-top:24px}
 
-      /* Process */
-      .process-grid{grid-template-columns:1fr;gap:14px}
-      .process-step{padding:28px 24px}
-      .step-num{font-size:52px}
-      .process-step h3{font-size:17px}
-      .process-step p{font-size:13.5px}
+      /* Process compact */
+      .process{padding:48px 0}
+      .process-row{grid-template-columns:1fr 1fr;gap:6px;padding:14px}
+      .process-cell{padding:10px 12px;gap:10px}
+      .step-num{font-size:32px}
+      .process-cell-text strong{font-size:13px}
+      .process-cell-text span{font-size:11.5px}
 
       /* Reviews */
       .reviews-top{flex-direction:column;align-items:stretch;gap:24px;margin-bottom:36px}
@@ -695,7 +694,7 @@
         <div class="about-content fade-in">
           <div class="eyebrow">À propos</div>
           <h2>Un peintre <em>local</em> qui prend soin de votre intérieur.</h2>
-          <p>Depuis 2021, SmatiProServices s'est imposée comme une référence en peinture et rénovation à Muret et dans toute la Haute-Garonne. Notre priorité : un travail de qualité irréprochable, livré dans les délais convenus, avec un suivi personnalisé du devis jusqu'à la réception du chantier.</p>
+          <p>Depuis 2021, SmatiProServices est la référence peinture et rénovation à Muret et en Haute-Garonne. Travail de qualité, délais respectés, suivi personnalisé du devis à la réception.</p>
           <div class="about-features">
             <div class="about-feature">
               <i class="fas fa-medal"></i>
@@ -846,46 +845,28 @@
         </div>
       </div>
 
-      <div class="work-showcase fade-in" aria-label="Autres réalisations">
-        <div class="work-showcase-item"><img src="image/avant-apres/showcase-escalier.webp" alt="Cage d'escalier rouge — finition décorative à Muret" loading="lazy" /></div>
-        <div class="work-showcase-item"><img src="image/avant-apres/showcase-papier-peint.webp" alt="Pose de papier peint capitonné par SmatiProServices" loading="lazy" /></div>
-        <div class="work-showcase-item"><img src="image/avant-apres/showcase-terrasse-1.webp" alt="Terrasse rénovée à Muret — vue d'ensemble" loading="lazy" /></div>
-        <div class="work-showcase-item"><img src="image/avant-apres/showcase-terrasse-2.webp" alt="Terrasse rénovée à Muret — autre vue" loading="lazy" /></div>
-      </div>
     </div>
   </section>
 
-  <!-- ===== PROCESS ===== -->
+  <!-- ===== PROCESS (compact) ===== -->
   <section class="process" id="process">
     <div class="container">
-      <div class="section-head fade-in">
-        <div class="eyebrow">Notre process</div>
-        <h2>Simple, fluide et sans <em>surprise</em>.</h2>
-        <p>De votre demande à la réception du chantier, un suivi transparent en 4 étapes.</p>
-      </div>
-      <div class="process-grid">
-        <div class="process-step fade-in">
+      <div class="process-row fade-in">
+        <div class="process-cell">
           <div class="step-num">01</div>
-          <h3>Demande de devis</h3>
-          <p>Remplissez le formulaire ou appelez-nous. Décrivez vos travaux et envoyez des photos si possible.</p>
-          <i class="fas fa-arrow-right process-arrow"></i>
+          <div class="process-cell-text"><strong>Devis</strong><span>Formulaire ou appel</span></div>
         </div>
-        <div class="process-step fade-in">
+        <div class="process-cell">
           <div class="step-num">02</div>
-          <h3>Visite &amp; estimation</h3>
-          <p>Nous venons chez vous pour évaluer le chantier et vous remettre un devis détaillé et gratuit sous 24h.</p>
-          <i class="fas fa-arrow-right process-arrow"></i>
+          <div class="process-cell-text"><strong>Visite</strong><span>Estimation sous 24h</span></div>
         </div>
-        <div class="process-step fade-in">
+        <div class="process-cell">
           <div class="step-num">03</div>
-          <h3>Planification</h3>
-          <p>Nous convenons ensemble d'une date d'intervention adaptée à votre emploi du temps et à vos contraintes.</p>
-          <i class="fas fa-arrow-right process-arrow"></i>
+          <div class="process-cell-text"><strong>Planning</strong><span>Date d'intervention</span></div>
         </div>
-        <div class="process-step fade-in">
+        <div class="process-cell">
           <div class="step-num">04</div>
-          <h3>Réalisation</h3>
-          <p>Nos artisans réalisent vos travaux avec soin. Chantier nettoyé à la livraison, satisfaction garantie.</p>
+          <div class="process-cell-text"><strong>Chantier</strong><span>Réalisé et nettoyé</span></div>
         </div>
       </div>
     </div>
@@ -1022,22 +1003,8 @@
     </div>
   </section>
 
-  <!-- ===== CTA DARK ===== -->
-  <div class="container" style="padding-bottom:100px">
-    <div class="cta-dark fade-in">
-      <div class="cta-watermark" aria-hidden="true"><img src="image/logo.png" alt="" /></div>
-      <div class="eyebrow">Prêt à commencer ?</div>
-      <h2>Transformons votre <em>intérieur</em> ensemble.</h2>
-      <p>Devis gratuit et sans engagement sous 24h. Notre équipe est disponible 6j/7 pour répondre à toutes vos questions.</p>
-      <div class="btns">
-        <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Demander un devis</a>
-        <a href="tel:0685108676" class="btn btn-white"><i class="fas fa-phone"></i> 06 85 10 86 76</a>
-      </div>
-    </div>
-  </div>
-
   <!-- ===== CONTACT ===== -->
-  <section class="contact" id="contact" style="padding-top:0">
+  <section class="contact" id="contact">
     <div class="container">
       <div class="contact-card fade-in">
         <div class="contact-info">
