@@ -15,7 +15,8 @@
   <meta property="og:image" content="https://smatiproservices.fr/image/hero-painter.webp" />
   <meta property="og:locale" content="fr_FR" />
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" href="image/logo.png" />
+  <link rel="apple-touch-icon" href="image/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -153,8 +154,9 @@
     /* ====== HEADER ====== */
     header{position:sticky;top:0;z-index:100;background:rgba(253,247,240,0.92);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-    .brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--ink);letter-spacing:-0.02em}
-    .brand-mark{width:36px;height:36px;border-radius:10px;background:var(--primary);color:white;display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:800}
+    .brand{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:20px;color:var(--ink);letter-spacing:-0.02em}
+    .brand-mark{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+    .brand-mark img{width:100%;height:100%;object-fit:contain;display:block}
     .brand span{color:var(--primary)}
     nav.menu{display:flex;align-items:center;gap:32px}
     nav.menu a{font-size:14.5px;font-weight:500;color:var(--ink);position:relative;transition:color 0.2s}
@@ -449,7 +451,7 @@
     <div class="container">
       <div class="nav">
         <a href="#" class="brand">
-          <span class="brand-mark">S</span>
+          <span class="brand-mark"><img src="image/logo.png" alt="Logo SmatiProServices — peintre en bâtiment à Muret" /></span>
           Smati<span>Pro</span>Services
         </a>
         <nav class="menu">
@@ -1070,7 +1072,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="brand"><span class="brand-mark">S</span>Smati<span>Pro</span>Services</a>
+          <a href="#" class="brand"><span class="brand-mark"><img src="image/logo.png" alt="Logo SmatiProServices — peintre en bâtiment à Muret" /></span>Smati<span>Pro</span>Services</a>
           <p>Peintre professionnel à Muret. Travaux de peinture intérieure et extérieure, rénovation après sinistre, enduits et finitions. Devis gratuit sous 24h.</p>
           <div class="footer-social">
             <a href="tel:0685108676" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
